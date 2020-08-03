@@ -1,0 +1,6 @@
+fastlane/test_output/*
+screenshots/*
+report.xml
+build
+builds
+*.ipa

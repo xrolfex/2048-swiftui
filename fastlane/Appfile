@@ -1,0 +1,8 @@
+app_identifier("com.consumer.ftb.Swift-2048") # The bundle identifier of your app
+apple_id("xrolfex@gmail.com") # Your Apple email address
+
+itc_team_id("221259") # App Store Connect Team ID
+team_id("J2RQ3V5TA4") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

@@ -1,0 +1,26 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          version: 2.6.x
+      - name: Choose Xcode 11
+        run: sudo xcode-select --switch /Applications/Xcode_11.app
+      - name: Install Project Dependencies
+        run: |
+          bundler install
+          brew install swiftlint
+      - name: Fetch Build Provisions
+        run: bundler exec fastlane certs_for_env environment:development
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+      - name: Build CI Build
+        run: bundler exec fastlane build_ci

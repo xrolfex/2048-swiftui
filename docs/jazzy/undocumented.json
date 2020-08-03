@@ -1,0 +1,236 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/Logic.swift",
+      "line": 18,
+      "symbol": "Logic.MatrixBlockType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/Logic.swift",
+      "line": 22,
+      "symbol": "Logic.Direction.left",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/Logic.swift",
+      "line": 23,
+      "symbol": "Logic.Direction.right",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/Logic.swift",
+      "line": 24,
+      "symbol": "Logic.Direction.up",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/Logic.swift",
+      "line": 25,
+      "symbol": "Logic.Direction.down",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/Logic.swift",
+      "line": 26,
+      "symbol": "Logic.Direction.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/Logic.swift",
+      "line": 29,
+      "symbol": "Logic.blockMatrix",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/Logic.swift",
+      "line": 30,
+      "symbol": "Logic.lastGestureDirection",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/Logic.swift",
+      "line": 38,
+      "symbol": "Logic.hasLost",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/Logic.swift",
+      "line": 39,
+      "symbol": "Logic.score",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/MatrixBlock.swift",
+      "line": 13,
+      "symbol": "Block.Value",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/MatrixBlock.swift",
+      "line": 14,
+      "symbol": "Block.number",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/MatrixBlock.swift",
+      "line": 19,
+      "symbol": "IndexedBlock.Index",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/MatrixBlock.swift",
+      "line": 21,
+      "symbol": "IndexedBlock.index",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/MatrixBlock.swift",
+      "line": 22,
+      "symbol": "IndexedBlock.item",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/MatrixBlock.swift",
+      "line": 27,
+      "symbol": "MatrixBlock.Index",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Models/MatrixBlock.swift",
+      "line": 30,
+      "symbol": "MatrixBlock.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Utils/SwiftUIExtensions.swift",
+      "line": 55,
+      "symbol": "GeometryProxy.GridMetrics",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/BlockView.swift",
+      "line": 27,
+      "symbol": "BlockView.blank()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/BlockView.swift",
+      "line": 91,
+      "symbol": "BlockView_Previews",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/ChartView/BarsView.swift",
+      "line": 50,
+      "symbol": "BarsView.init(bars:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/ChartView/LegendView.swift",
+      "line": 39,
+      "symbol": "LegendView.init(bars:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/GameView.swift",
+      "line": 206,
+      "symbol": "GameView_Previews",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/GridView.swift",
+      "line": 32,
+      "symbol": "MergedViewModifier.m1",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/GridView.swift",
+      "line": 33,
+      "symbol": "MergedViewModifier.m2",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/GridView.swift",
+      "line": 84,
+      "symbol": "GridView.SupportingMatrix",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/GridView.swift",
+      "line": 86,
+      "symbol": "GridView.matrix",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/GridView.swift",
+      "line": 87,
+      "symbol": "GridView.blockEnterEdge",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/GridView.swift",
+      "line": 88,
+      "symbol": "GridView.proxy",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/GridView.swift",
+      "line": 89,
+      "symbol": "GridView.boardSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/GridView.swift",
+      "line": 156,
+      "symbol": "BlockGridView_Previews",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/GridView.swift",
+      "line": 158,
+      "symbol": "BlockGridView_Previews.matrix",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rolf/Desktop/Swift_2048_FL/Swift_2048/Views/InsightsView.swift",
+      "line": 46,
+      "symbol": "InsightsView_Previews",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/rolf/Desktop/Swift_2048_FL"
+}

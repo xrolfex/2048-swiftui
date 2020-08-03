@@ -1,0 +1,11 @@
+clean: true
+min_acl: internal
+theme: fullwidth
+output: ../docs/jazzy
+sdk: iphoneos
+undocumented_text: ""
+author: "Fifth Third Bank"
+disable_search: true
+hide_documentation_coverage: true
+
+github_url: "https://github.com/fifththirdbank/actions-test-2048"

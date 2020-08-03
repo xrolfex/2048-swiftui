@@ -1,0 +1,189 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+###########################
+#       LOAD SECTION      #
+###########################
+
+#$:.unshift File.dirname(__FILE__)
+require './lib/utils.rb'
+
+default_platform(:ios)
+
+platform :ios do
+
+  before_all do 
+    sh 'mkdir ../reports || true'
+    sh 'mkdir ../screenshots || true'
+    sh 'mkdir ../docs || true'
+    sh 'mkdir ../artifacts || true'
+  end
+
+  after_all do
+    sh 'rm -rf ../build || true'
+  end
+
+  ###########################
+  #      UTILS SECTION      #
+  ###########################
+  desc "Linting"
+  lane :lint do
+    sh 'mkdir ../reports/linting || true'
+    swiftlint(
+      mode: :lint,      # SwiftLint mode: :lint (default) or :autocorrect
+      output_file: "reports/linting/result.md", 
+      config_file: "fastlane/.swiftlint.yml",
+      ignore_exit_status: false,    # Allow fastlane to continue even if SwiftLint returns a non-zero exit status
+      reporter: "markdown"
+    )
+  end
+  
+  desc "Code Coverage"
+  lane :code_coverage do
+    #all_tests
+    slather(
+      scheme: ENV["SCHEME"],
+      proj: ENV["PROJECT"],
+      html: true,
+      jenkins: true,
+      output_directory: "reports/code_coverage"
+    )
+  end
+
+  desc "Screen Shots"
+  lane :screenshots do 
+    capture_screenshots
+  end
+
+  desc "Generate Documentation"
+  lane :gen_docs do
+    jazzy(config: "fastlane/.jazzy.yaml")
+  end
+
+  ###########################
+  #       TEST SECTION      #
+  ###########################
+  desc "Run Test"
+  lane :tests do
+    test(scheme_name: 'Tests')
+  end
+
+  desc "Run UI Test"
+  lane :ui_tests do
+    test(scheme_name: 'UITests')
+  end
+
+  desc "Run All Test"
+  lane :all_tests do
+    tests
+    ui_tests
+  end
+
+  desc "Run Test (scheme_name)"
+  private_lane :test do | options |
+    if options[:scheme_name]
+    scan(
+      scheme: options[:scheme_name],
+      clean: true,
+      code_coverage: true
+    )
+    end
+  end
+
+  ###########################
+  #   PROVISIONS SECTION    #
+  ###########################
+
+  desc "Clear Keychain"
+  lane :clear_keychain do
+    clear_temp_keychain ENV["KEYCHAIN_NAME"]
+  end
+
+  desc "Get Certs for ENV [development | adhoc | enterprise | appstore]"
+  lane :certs_for_env do | options |
+    ensure_temp_keychain ENV["KEYCHAIN_NAME"]
+    if options[:environment]
+      match(type: options[:environment], keychain_name: ENV["KEYCHAIN_NAME"], readonly: true)
+    end
+  end
+  
+  ##MAKE PROVISIONS
+
+  desc "Gen Certs For ENV [development | adhoc | enterprise | appstore]"
+  private_lane :gen_certs_for_env do |options|
+    env = options[:environment]
+    keychain = options[:keychain]
+    ensure_temp_keychain keychain
+    match(type: environment, keychain_name: keychain)
+  end
+
+
+  ###########################
+  #      BUILD SECTION      #
+  ###########################
+
+  desc "Building CI"
+  lane :build_ci do
+    lint
+    all_tests
+  end
+
+  desc "Building Adhoc Debug"
+  lane :build_debug do
+    #ensure_git_status_clean
+    build(signAndExport: true, 
+          configuration: 'Debug',
+          match_type: 'adhoc', 
+          export_method: 'ad-hoc');
+    #reset_git_repo
+  end
+
+  desc "Building Enterprise Debug"
+  lane :build_enterprise_debug do
+    #ensure_git_status_clean
+    build(signAndExport: true, 
+          configuration: 'Release',
+          match_type: 'enterprise', 
+          export_method: 'enterprise');      
+    #reset_git_repo
+  end
+
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    build(signAndExport: true, 
+          configuration: 'Release',
+          match_type: 'appstore', 
+          export_method: 'app-store');
+    upload_to_testflight
+  end
+
+  private_lane :build do |options|
+    if options[:signAndExport]
+      type = options[:match_type]
+      configuration = options[:configuration]
+      keychain = ENV["KEYCHAIN_NAME"]
+      readonly = true
+      export_method = options[:export_method]
+      ensure_temp_keychain keychain
+      match(type: type, keychain_name: keychain, readonly: readonly)
+      gym(configuration: configuration, export_method: export_method, silent: false)
+      clear_temp_keychain keychain
+    else
+      gym(configuration: 'Debug', skip_archive: true, skip_package_ipa: true, silent: false)
+    end
+
+  end
+
+end
